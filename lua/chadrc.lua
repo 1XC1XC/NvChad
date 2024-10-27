@@ -29,19 +29,18 @@ M.nvdash = {
 
 M.mason = {
     pkgs = {
+        "ktlint",
         "bash-language-server",
         "black",
         "clangd",
         "css-lsp",
         "eslint-lsp",
+        "fourmolu",
         "gopls",
-        -- "haskell-debug-adapter", use the latest one from ghcup cli
-        -- "haskell-language-server",
         "html-lsp",
         "json-lsp",
         "kotlin-debug-adapter",
         "kotlin-language-server",
-        "ktlint",
         "lua-language-server",
         "prettier",
         "pyright",
