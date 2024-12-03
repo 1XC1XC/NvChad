@@ -25,7 +25,8 @@ return {
         },
 
         opts = {
-            model = "llama3.2:3b",
+            -- model = "llama3.2:3b",
+            model = "qwen2.5-coder:3b",
             url = "http://127.0.0.1:11434",
             serve = {
                 on_start = false,
@@ -82,12 +83,20 @@ return {
             }
 
             local call = function(message, ...)
-                if message:match "^%[NvimTree%]%s/home/cx1/.*%s->%s/home/cx1/.*" then
+                if message:match "^%[NvimTree%].*" then
                     native(message, ...)
                     return
                 end
                 notify(message, ...)
             end
+
+            -- local call = function(message, ...)
+            --     if message:match "^%[NvimTree%]%s/home/cx1/.*%s->%s/home/cx1/.*" then
+            --         native(message, ...)
+            --         return
+            --     end
+            --     notify(message, ...)
+            -- end
 
             vim.notify = call
         end,

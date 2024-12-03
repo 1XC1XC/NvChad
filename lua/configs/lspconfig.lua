@@ -3,6 +3,8 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
+lspconfig.typos_lsp.setup {}
+
 lspconfig.hls.setup {
     cmd = { "haskell-language-server-wrapper", "--lsp" },
 }
@@ -27,10 +29,8 @@ lspconfig.clangd.setup {
     },
 }
 
-local capabilities = nvlsp.capabilities
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.jsonls.setup {
-    capabilities = capabilities,
+    capabilities = nvlsp.capabilities,
 }
 
 lspconfig.zls.setup {}
