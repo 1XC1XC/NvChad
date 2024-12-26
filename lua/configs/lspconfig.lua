@@ -3,8 +3,6 @@ require("nvchad.configs.lspconfig").defaults()
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
 
-lspconfig.typos_lsp.setup {}
-
 lspconfig.hls.setup {
     cmd = { "haskell-language-server-wrapper", "--lsp" },
 }
