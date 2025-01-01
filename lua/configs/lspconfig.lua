@@ -31,10 +31,21 @@ lspconfig.jsonls.setup {
     capabilities = nvlsp.capabilities,
 }
 
-lspconfig.zls.setup {}
-lspconfig.bashls.setup {}
+-- lspconfig.zls.setup {}
+-- lspconfig.bashls.setup {}
+-- lspconfig.luau_lsp.setup {}
 
-local servers = { "html", "cssls", "rust_analyzer", "gopls", "ts_ls" }
+for _, x in ipairs { "luau_lsp", "bashls", "zls" } do
+    lspconfig[x].setup {}
+end
+
+local servers = {
+    "html",
+    "cssls",
+    -- "rust_analyzer", -- Commented out because of rustaceanvim
+    "gopls",
+    "ts_ls",
+}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = nvlsp.on_attach,

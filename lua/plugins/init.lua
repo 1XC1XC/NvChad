@@ -1,52 +1,10 @@
 return {
 
-    {
-        "nomnivore/ollama.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-
-        cmd = { "Ollama", "OllamaModel", "OllamaServe", "OllamaServeStop" },
-
-        keys = {
-            {
-                "<leader>oo",
-                ":<c-u>lua require('ollama').prompt()<cr>",
-                desc = "ollama prompt",
-                mode = { "n", "v" },
-            },
-
-            {
-                "<leader>oG",
-                ":<c-u>lua require('ollama').prompt('Generate_Code')<cr>",
-                desc = "ollama Generate Code",
-                mode = { "n", "v" },
-            },
-        },
-
-        opts = {
-            model = "qwen2.5-coder:3B",
-
-            url = "http://127.0.0.1:11434",
-            serve = {
-                on_start = false,
-                command = "ollama",
-                args = { "serve" },
-                stop_command = "pkill",
-                stop_args = { "-SIGTERM", "ollama" },
-            },
-        },
-    },
-
-    {
-        "mrcjkb/rustaceanvim",
-        version = "^5",
-        lazy = false,
-    },
     -- {
     --     "mrcjkb/rustaceanvim",
     --     version = "^5",
-    --     ["lazy-analyzer"] = {
+    --     lazy = false,
+    --     ["rust-analyzer"] = {
     --         cargo = {
     --             allFeatures = true,
     --         },
@@ -63,99 +21,8 @@ return {
     },
 
     {
-        "rcarriga/nvim-notify",
-        event = "VeryLazy",
-        config = function()
-            local native = vim.notify
-            local notify = require "notify"
-
-            notify.setup {
-                background_colour = "#000000",
-                fps = 60,
-                level = 2,
-                minimum_width = 50,
-                render = "default",
-                stages = "fade_in_slide_out",
-                timeout = 3000,
-                top_down = true,
-                icons = {
-                    ERROR = "",
-                    WARN = "",
-                    INFO = "",
-                    DEBUG = "",
-                    TRACE = "✎",
-                },
-            }
-
-            local call = function(message, ...)
-                if message:match "^%[NvimTree%].*" then
-                    native(message, ...)
-                    return
-                end
-                notify(message, ...)
-            end
-
-            -- local call = function(message, ...)
-            --     if message:match "^%[NvimTree%]%s/home/cx1/.*%s->%s/home/cx1/.*" then
-            --         native(message, ...)
-            --         return
-            --     end
-            --     notify(message, ...)
-            -- end
-
-            vim.notify = call
-        end,
-    },
-
-    {
-        "RRethy/vim-illuminate",
-        event = "VeryLazy",
-        config = function()
-            require("illuminate").configure {
-                providers = {
-                    "lsp",
-                    "treesitter",
-                    "regex",
-                },
-                delay = 100,
-                filetypes_denylist = {
-                    "dirbuf",
-                    "dirvish",
-                    "fugitive",
-                    "NvimTree",
-                    "packer",
-                    "sidebar",
-                    "toggleterm",
-                },
-                under_cursor = true,
-                large_file_cutoff = 5000,
-                large_file_overrides = {
-                    delay = 500,
-                    under_cursor = false,
-                },
-                min_count_to_highlight = 1,
-            }
-        end,
-    },
-
-    {
         "ollykel/v-vim",
         event = "VeryLazy",
-    },
-
-    {
-        "folke/twilight.nvim",
-        cmd = "Twilight",
-        config = function()
-            require("twilight").setup {
-                dimming = {
-                    alpha = 0.25,
-                    color = { "Normal", "#ffffff" },
-                    inactive = true,
-                },
-                context = 10,
-            }
-        end,
     },
 
     {
@@ -180,6 +47,7 @@ return {
             }
         end,
     },
+
     {
         "stevearc/conform.nvim",
         opts = require "configs.conform",
