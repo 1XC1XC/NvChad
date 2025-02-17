@@ -8,6 +8,8 @@ local function S(boolean, t, f, append)
     return (append or " ") .. (boolean and t or f)
 end
 
+vim.wo.wrap = false
+
 local mappings = {
     n = {
         ["<A-e>"] = {
@@ -149,3 +151,4 @@ local function apply_mappings(x)
 end
 
 apply_mappings(mappings)
+

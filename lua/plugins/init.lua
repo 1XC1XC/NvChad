@@ -1,32 +1,14 @@
 return {
 
-    -- {
-    --     "machakann/vim-sandwich",
-    --     event = "VeryLazy",
-    --     config = function()
-    --         require("nvim-surround").setup {}
-    --     end,
-    -- },
-
-    -- {
-    --     "echasnovski/mini.surround",
-    --     event = "VeryLazy",
-    -- },
-
     {
-
-        "kylechui/nvim-surround",
-        version = "*",
+        "ollykel/v-vim",
         event = "VeryLazy",
-        config = function()
-            require("nvim-surround").setup {}
-        end,
     },
 
-    -- {
-    --     "tpope/vim-surround",
-    --     event = "VeryLazy",
-    -- },
+    {
+        "stevearc/conform.nvim",
+        opts = require "configs.conform",
+    },
 
     {
         "iamcco/markdown-preview.nvim",
@@ -35,11 +17,6 @@ return {
         build = function()
             vim.fn["mkdp#util#install"]()
         end,
-    },
-
-    {
-        "ollykel/v-vim",
-        event = "VeryLazy",
     },
 
     {
@@ -66,11 +43,6 @@ return {
     },
 
     {
-        "stevearc/conform.nvim",
-        opts = require "configs.conform",
-    },
-
-    {
         "neovim/nvim-lspconfig",
         config = function()
             require "configs.lspconfig"
@@ -89,4 +61,5 @@ return {
             },
         },
     },
+
 }

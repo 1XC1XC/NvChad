@@ -1,7 +1,8 @@
 return {
     "mrcjkb/rustaceanvim",
     version = "^4",
-    ft = "rust",
+    -- ft = "rust",
+    event = { "BufReadPre *.rs", "BufNewFile *.rs" },
 
     ["rust-analyzer"] = {
         cargo = {

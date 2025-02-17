@@ -28,8 +28,11 @@ return {
                 native(message, ...)
                 return
             end
+
             notify(message, ...)
         end
+
+        vim.notify = call
 
         -- local call = function(message, ...)
         --     if message:match "^%[NvimTree%]%s/home/cx1/.*%s->%s/home/cx1/.*" then
@@ -38,7 +41,5 @@ return {
         --     end
         --     notify(message, ...)
         -- end
-
-        vim.notify = call
     end,
 }

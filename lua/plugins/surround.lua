@@ -1,0 +1,31 @@
+return {
+    "kylechui/nvim-surround",
+    version = "*",
+    lazy = false,
+    keys = {
+        { "ys", desc = "Surround motion", mode = "n" },
+        { "yS", desc = "Surround current line", mode = "n" },
+        { "yM", desc = "Surround motion on new lines", mode = "n" },
+        { "yL", desc = "Surround current line on new lines", mode = "n" },
+        { "ds", desc = "Delete surrounding", mode = "n" },
+        { "cs", desc = "Change surrounding", mode = "n" },
+        { "cS", desc = "Change surrounding with newlines", mode = "n" },
+        { "S", desc = "Surround visual selection", mode = "x" },
+        { "gS", desc = "Surround visual selection with newlines", mode = "x" },
+    },
+    opts = {
+        keymaps = {
+            insert = "<C-g>s",
+            insert_line = "<C-g>S",
+            normal = "ys",
+            normal_cur = "yS",
+            normal_line = "yM",
+            normal_cur_line = "yL",
+            visual = "S",
+            visual_line = "gS",
+            delete = "ds",
+            change = "cs",
+            change_line = "cS",
+        },
+    },
+}
