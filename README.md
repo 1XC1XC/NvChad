@@ -1,9 +1,32 @@
-**This repo is supposed to used as config by NvChad users!**
+# NvChad Config — 1XC1XC
 
-- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
-- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
-- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
+Custom keymaps, LSP, plugins, options.
 
-# Credits
+---
 
-1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
+## Keymaps
+
+### Normal Mode
+
+* `<leader>om` — Open Mason
+* `<leader>oM` — Update Mason
+* `<leader>ol` — Open Lazy
+* `<leader>oL` — Update Plugins (Lazy)
+* `<leader>ca` — LSP Code Action
+* `<A-e>` — Toggle Illuminate
+* `<leader>md` — Toggle Markdown Preview
+* `<leader>tw` — Toggle Twilight
+* `<leader>fm` — Format Files & Remove CRLF
+* `<leader>df` — Show Diagnostic Float
+* `<leader>rcs` — Clear Specific Register
+* `<leader>rcC` — Clear All Registers
+* `<leader>lw` — Toggle Line Wrap
+
+### Insert Mode
+
+* `jk` — Escape Insert Mode
+* `<A-d>` — Move to End of Line
+
+### Normal/Terminal Mode
+
+* `<A-m>` — Toggle Floating Terminal
